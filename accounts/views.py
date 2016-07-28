@@ -1,3 +1,52 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages, auth
+from django.core.urlresolvers import reverse
+from django.template.context_processors import csrf
+from .forms import UserLoginForm, UserRegistrationForm
 
 # Create your views here.
+def login(request):
+    # logging code to be used in production commented out for now
+    # log.info("Handling login %s request", request.method)
+    if request.method == 'POST':
+        form = UserLoginForm(request.POST)
+        if form.is_valid():
+            user = auth.authenticate(email=request.POST.get('email'), password=request.POST.get('password'))
+
+            if user is not None:
+                auth.login(request, user)
+                messages.error(request, 'You have successfully logged in! ')
+                return redirect(reverse('index'))
+            else:
+                form.add_error(None, 'Your email or password was not recognised')
+    else:
+        form = UserLoginForm()
+
+    args = {'form': form}
+    args.update(csrf(request))
+    return render(request, 'login.html', args)
+
+def register(request):
+    # logging code to be used in production commented out for now
+    # log.info("Handling register %s request", request.method)
+    if request.method == 'POST':
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            user = auth.authenticate(email=request.POST.get('email'), password=request.POST.get('password1'))
+
+            if user:
+                messages.success(request, 'You have successfully registered')
+                return redirect(reverse('index'))
+
+            else:
+                messages.error(request, 'Unable to log you in at this time ')
+
+    else:
+        form = UserRegistrationForm()
+
+    args = {'form': form}
+    args.update(csrf(request))
+
+    return render(request, 'register.html', args)

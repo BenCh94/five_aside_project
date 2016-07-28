@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hack Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href ="{% static 'css/hack_blog.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+<div id="masthead">
+    <div class="container">
+        <div class="row">
+            <a href="/"><h1> 5ify
+                <p id="logo" class="lead"><strong>The 5 aside team generator</strong></p>
+            </h1></a>
+        </div>
+        <div class="row">
+            <nav class="navbar navbar-inverse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Home</a></li>
+{#                    {% if user.is_authenticated %}#}
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Log out</a></li>
+{#                    {% else %}#}
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/login/">Log in</a></li>
+{#                    {% endif %}#}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="container">
+{% block content %}
+
+{% endblock content %}
+</div>
+</body>
