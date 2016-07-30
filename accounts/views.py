@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
 from django.template.context_processors import csrf
 from .forms import UserLoginForm, UserRegistrationForm
 
@@ -50,3 +51,15 @@ def register(request):
     args.update(csrf(request))
 
     return render(request, 'register.html', args)
+
+@login_required(login_url='/login/')
+def profile(request):
+    return render(request, 'profile.html')
+
+
+def logout(request):
+    #logging code to be added in production
+    # log.info("Handling logout %s request", request.method)
+    auth.logout(request)
+    messages.success(request, 'You have successfully logged out')
+    return redirect(reverse('index'))
