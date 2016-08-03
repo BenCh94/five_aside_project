@@ -4,6 +4,7 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.template.context_processors import csrf
 from .forms import UserLoginForm, UserRegistrationForm
+from home.models import Player
 
 # Create your views here.
 def login(request):
@@ -17,7 +18,7 @@ def login(request):
             if user is not None:
                 auth.login(request, user)
                 messages.error(request, 'You have successfully logged in! ')
-                return redirect(reverse('index'))
+                return redirect(reverse('profile'))
             else:
                 form.add_error(None, 'Your email or password was not recognised')
     else:
@@ -54,7 +55,8 @@ def register(request):
 
 @login_required(login_url='/login/')
 def profile(request):
-    return render(request, 'profile.html')
+    players = Player.objects.filter(user_id_id=request.user.id)
+    return render(request, 'profile.html', {'players': players})
 
 
 def logout(request):

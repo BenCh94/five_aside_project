@@ -16,5 +16,9 @@ class Player(models.Model):
     losses = models.IntegerField(default=0)
     draws = models.IntegerField(default=0)
 
+    # @property
+    # def image_url(self):
+    #     if
+
     def add(self):
         self.save()

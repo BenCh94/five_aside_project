@@ -6,4 +6,15 @@
 <p>You are logged in {{ user.email }}</p>
 
 <button onclick="location.href='/new/player'">Add Player</button>
+<div class="row">
+<h2>Your Players</h2>
+{% for player in players %}
+        <div class="col-md-2">
+            <img src="/media/{{ player.image }}" alt>
+        </div>
+        <div class="col-md-3">
+            <p>{{ player.first_name }} {{ player.last_name }}</p>
+        </div>
+{% endfor %}
+</div>
 {% endblock %}
