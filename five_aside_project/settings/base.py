@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'accounts',
     'home',
+    'storages',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -106,12 +107,27 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
-
-STATIC_URL = '/static/'
-
 
 # User authentication settings
 AUTH_USER_MODEL = 'accounts.User'
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend', 'accounts.backends.EmailAuth',)
+
+#aws allow browsers to cache files for a long time
+AWS_HEADERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'Cache-Control': 'max-age-94608000',
+}
+
+AWS_STORAGE_BUCKET_NAME = '5ifybucket'
+AWS_ACCESS_KEY = 'AKIAJUJCTSH5MNPKRU3Q'
+AWS_SECRET_ACCESS_KEY = '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'
+
+#keep storage domains simple for s3
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+
+STATIC_URL = 'https://%s/' % AWS_S3_CUSTOM_DOMAIN
+
+STATICFILES_STROAGE = 'storages.backends.s3boto.S3BotoStorage'
