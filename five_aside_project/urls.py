@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^$', home_views.get_index, name='index'),
     url(r'', include('accounts.urls')),
     url(r'', include('home.urls')),
+    url(r'', include('blog.urls')),
 ]

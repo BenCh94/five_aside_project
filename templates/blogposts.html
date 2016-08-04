@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 new_post_button">
+                <p><button class="btn btn-primary" onclick="location.href='{% url 'new_post' %}'">New Post</button></p>
+                <p><button class="btn btn-primary" on-click="href='/popular'">Order by views</button></p>
+            </div>
+        </div>
+    </div>
+    {% for post in posts %}
+        <div class="row">
+            <div class="ool-md-2 col-sm-3 text-center">
+                <a class="story-img" href="#"><img src="http://placehold.it/100" style="width:100px; height: 100px; background-color: #12ABB2; color: #ffffff;" class="img-circle"></a>
+            </div>
+            <div class="col-md-7 col-sm-6">
+                <h3>{{ post.title }}</h3>
+                        <p>{{ post.content|truncatewords:30 }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-5">
+                <p><button class="btn btn-success" onclick="location.href='/blog/{{ post.id }}'">Read More</button></p>
+                <p class="details">{{ post.published_date }}  <strong>Views</strong> <p class="viewCounter">{{ post.views }}</p>  <strong>Tag </strong><p class="tags">{{ post.tag }}</p></p>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+
+{% endblock %}
