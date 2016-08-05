@@ -6,8 +6,8 @@
 <p>You are logged in {{ user.email }}</p>
 
 <button onclick="location.href='/new/player'">Add Player</button>
-<div class="row">
 <h2>Your Players</h2>
+<div class="row player-box">
 {% for player in players %}
         <div class="col-md-2">
             <img src="{{ MEDIA_URL }}{{ player.image }}" class="player-image">

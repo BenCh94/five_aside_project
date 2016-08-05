@@ -2,3 +2,7 @@
     width: 100%;
     height: 100px;
 }
+
+.player-box {
+    background: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)), url("https://s3-eu-west-1.amazonaws.com/ben-fiveify/media/images/pitch_background-hr.jpg?X-Amz-Date=20160805T145248Z&X-Amz-Expires=300&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Signature=454be5e969fae3872284cdafe94dfa45664818d4d14001c2ae1e21aa6095db00&X-Amz-Credential=ASIAJRYCVHSLKE63QULQ/20160805/eu-west-1/s3/aws4_request&X-Amz-SignedHeaders=Host&x-amz-security-token=FQoDYXdzEKP//////////wEaDD0cd63OPU%2BNPtEsPyLHAX6mW1jKg%2BmOIoba%2BtKQ9WzV%2BggOcj7S3JgE4kkHZisj/O5QPbwvp3vTgtQDu7lww7h%2BuUGQmqDe3I15lgI645L/QbiJgIhq4qPHzQxVFDl6AJT5YkNV0IurV%2Bgq3KzfnAEXlF%2BQDwCtqV54nuf%2B4Cknrt8xtjFLAjKycCTDFwLUOprjK4t8bp/gTGSFfbUUxZY0RkAMI3XcB4NIqi4KSkpGTdputUjEpGsPnxpF5pjsltEJ4pzJq11VuEJO6xwKjoFYe5ZA48so9byRvQU%3D") ;
+}
