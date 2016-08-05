@@ -1,0 +1,6 @@
+.idea
+*.pyc
+*.sqlite3
+*.jpg
+five_aside_project/media/images
+media/
