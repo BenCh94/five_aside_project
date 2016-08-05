@@ -1,15 +1,19 @@
 from base import *
+import dj_database_url
 
-
-# Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '../../db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
+CLEAR_DB_URL = os.environ.get("CLEARDB_DATABASE_URL", "")
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'secret key goes here'
+DATABASES['default'] = dj_database_url.parse(CLEAR_DB_URL)
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+DEBUG = os.environ.get("DJANGO_DEBUG", "False")
+ALLOWED_HOSTS = ['mighty-ocean-73194.herokuapp.com']
