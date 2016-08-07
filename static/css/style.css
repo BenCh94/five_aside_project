@@ -4,7 +4,7 @@
 }
 
 .player-box {
-    min-height: 450px;
+    height: 450px;
     background: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)), url("https://s3-eu-west-1.amazonaws.com/ben-fiveify/media/images/pitch_background-hr.jpg");
     background-size: cover;
     background-repeat: no-repeat;

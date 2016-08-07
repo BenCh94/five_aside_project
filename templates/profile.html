@@ -11,7 +11,7 @@
 {% for player in players %}
         <div class="col-md-3">
             <img src="{{ MEDIA_URL }}{{ player.image }}" class="player-image">
-            <p>{{ player.first_name }} {{ player.last_name }}</p>
+            <h3>{{ player.first_name }} {{ player.last_name }}</h3>
         </div>
 {% endfor %}
 </div>
