@@ -9,10 +9,8 @@
 <h2>Your Players</h2>
 <div class="row player-box">
 {% for player in players %}
-        <div class="col-md-2">
+        <div class="col-md-3">
             <img src="{{ MEDIA_URL }}{{ player.image }}" class="player-image">
-        </div>
-        <div class="col-md-2">
             <p>{{ player.first_name }} {{ player.last_name }}</p>
         </div>
 {% endfor %}
