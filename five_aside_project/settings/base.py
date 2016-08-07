@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'storages',
     'home',
-    'emoticons',
+    'django_emoticons',
     'debug_toolbar',
     'tinymce',
     'threads',
