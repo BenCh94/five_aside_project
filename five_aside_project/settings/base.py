@@ -33,6 +33,10 @@ INSTALLED_APPS = [
     'corsheaders',
     'storages',
     'home',
+    'emoticons',
+    'debug_toolbar',
+    'tinymce',
+    'threads',
 
 ]
 

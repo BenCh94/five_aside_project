@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href ="{% static 'css/style.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
 </head>
 <body>
 <div id="masthead">
@@ -28,6 +30,7 @@
                     <li><a href="/login/">Log in</a></li>
                     {% endif %}
                     <li><a href="/blog">Blog</a></li>
+                    <li><a href="/forum">Forum</a></li>
                 </ul>
             </nav>
         </div>
