@@ -13,3 +13,13 @@
     overflow-x: hidden;
     padding: 20px;
 }
+
+body {
+    background: url("https://s3-eu-west-1.amazonaws.com/ben-fiveify/media/images/soccer_11July16_original.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.content-container {
+    background: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6));
+}

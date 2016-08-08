@@ -3,7 +3,7 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-
+<div class="content-container">
     <form role="form" method="post" action="{% url 'register' %}">
         <legend>Create a new account</legend>
         {% csrf_token %}
@@ -14,5 +14,5 @@
         </div>
 
     </form>
-
+</div>
 {% endblock %}
