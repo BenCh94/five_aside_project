@@ -2,12 +2,10 @@
 
 {% block content %}
     {% load bootstrap_tags %}
-<div class="container">
     <h2>New Player</h2>
     <form method="Post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form | as_bootstrap }}
         <button type="submit" class="btn btn-info">Save</button>
     </form>
-</div>
 {% endblock %}
