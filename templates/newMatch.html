@@ -6,7 +6,8 @@
 <div class="row content-container">
 {% for player in players %}
         <div class="col-md-2">
-            <input type="checkbox" aria-label="{{ player.first_name }} {{ player.last_name }}">
+            <input type="checkbox" id="player-check">
+            <label for="player-check">{{ player.first_name }} {{ player.last_name }}</label>
         </div>
 {% endfor %}
 </div>
