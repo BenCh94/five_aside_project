@@ -5,6 +5,7 @@ from models import Player
 from forms import NewPlayerForm
 # Create your views here.
 
+
 def get_index(request):
     return render(request, 'index.html')
 
@@ -24,7 +25,12 @@ def new_player(request):
         form = NewPlayerForm()
     return render(request, 'newPlayerForm.html', {'form': form})
 
+
 def player_details(request, id):
     # log.info("Handling post_details %s request", request.method)
     player = get_object_or_404(Player, pk=id)
     return render(request, "playerdetail.html", {'player': player})
+
+
+def new_match(request):
+    return render(request, 'newMatch.html')

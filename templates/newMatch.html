@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+
+<h2>Your Players</h2>
+<div class="row content-container">
+{% for player in players %}
+        <div class="col-md-2">
+            <input type="checkbox" aria-label="{{ player.first_name }} {{ player.last_name }}">
+        </div>
+{% endfor %}
+</div>
+{% endblock %}

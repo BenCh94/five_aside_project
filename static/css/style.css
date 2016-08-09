@@ -1,25 +1,40 @@
 .player-image{
     width: 100%;
     height: 150px;
+    border-radius: 10px;
 }
 
 .player-box {
     height: 450px;
-    background: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)), url("https://s3-eu-west-1.amazonaws.com/ben-fiveify/media/images/pitch_background-hr.jpg");
+    background: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url("https://s3-eu-west-1.amazonaws.com/ben-fiveify/media/images/champos-league.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     overflow-y: scroll;
     overflow-x: hidden;
     padding: 20px;
+    border-radius: 5px;
 }
 
 body {
     background: url("https://s3-eu-west-1.amazonaws.com/ben-fiveify/media/images/soccer_11July16_original.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 50%;
 }
 .content-container {
-    background: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6));
+    background: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7));
+    padding: 10px;
+    border-radius: 10px;
+}
+.whitespace {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+.created {
+    color: white;
+}
+.index-hack {
+    margin-bottom: 150px;
 }
