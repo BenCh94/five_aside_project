@@ -5,7 +5,8 @@
 <h2>Great Success!!</h2>
 <p>You are logged in {{ user.email }}</p>
 
-<button onclick="location.href='/new/player'">Add Player</button>
+<button type="button" class="btn btn-primary btn-inverse" onclick="location.href='/new/player/'">Add Player</button>
+<button type="button" class="btn btn-primary btn-inverse" onclick="location.href='/new_match/'">Create Match</button>
 <h2>Your Players</h2>
 <div class="row player-box">
 {% for player in players %}
