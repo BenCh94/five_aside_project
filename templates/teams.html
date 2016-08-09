@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+    <div class="col-md-6">
+        <div class="team-container">
+            <h2 id="team-title">Team 1</h2>
+            <div class="row">
+                <div class="col-md-2"></div>
+                    {% for player in team1 %}
+                        <div class="col-md-4">
+                            <img src="{{ MEDIA_URL }}{{ player.image }}" class="player-image">
+                            <p>{{ player.first_name }} {{ player.last_name }}</p>
+                        </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="team-container">
+            <h2 id="team-title">Team 2</h2>
+            <div class="row">
+                <div class="col-md-2"></div>
+                    {% for player in team2 %}
+                        <div class="col-md-4">
+                            <img src="{{ MEDIA_URL }}{{ player.image }}" class="player-image">
+                            <p>{{ player.first_name }} {{ player.last_name }}</p>
+                        </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+from random import randint
 from models import Player
 from forms import NewPlayerForm
 # Create your views here.
@@ -31,6 +32,36 @@ def player_details(request, id):
     player = get_object_or_404(Player, pk=id)
     return render(request, "playerdetail.html", {'player': player})
 
-
+@login_required(login_url='/login/')
 def new_match(request):
-    return render(request, 'newMatch.html')
+    players = Player.objects.filter(user_id_id=request.user.id)
+    return render(request, 'newMatch.html', {'players': players})
+
+
+@login_required(login_url='/login/')
+def create_teams(request):
+    if request.method == "POST":
+        team1 = []
+        team2 = []
+        unselected = []
+
+        selected_players = request.POST.getlist('player-check')
+        playing = Player.objects.filter(user_id_id=request.user.id, id__in=selected_players)
+
+
+        # Assign playing players to team1 or team2
+        while len(team1) < 5:
+            x = randint(0, len(playing) - 1)
+            if playing[x] not in team1:
+                team1.append(playing[x])
+        for player in playing:
+            if player not in team1:
+                unselected.append(player)
+        while len(team2) < 5:
+            y = randint(0, len(unselected) - 1)
+            if unselected[y] not in team2:
+                team2.append(unselected[y])
+
+    return render(request, 'teams.html', {'team1': team1, 'team2': team2})
+
+
