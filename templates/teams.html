@@ -9,7 +9,7 @@
                     {% for player in team1 %}
                         <div class="col-md-4">
                             <img src="{{ MEDIA_URL }}{{ player.image }}" class="player-image">
-                            <h3 class="player-name">{{ player.first_name }} {{ player.last_name }}</h3>
+                            <h5 class="player-name">{{ player.first_name }} {{ player.last_name }}</h5>
                         </div>
                     {% endfor %}
             </div>
@@ -23,7 +23,7 @@
                     {% for player in team2 %}
                         <div class="col-md-4">
                             <img src="{{ MEDIA_URL }}{{ player.image }}" class="player-image">
-                            <h3 class="player-name">{{ player.first_name }} {{ player.last_name }}</h3>
+                            <h5 class="player-name">{{ player.first_name }} {{ player.last_name }}</h5>
                         </div>
                     {% endfor %}
             </div>
