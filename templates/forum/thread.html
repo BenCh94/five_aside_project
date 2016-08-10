@@ -5,7 +5,7 @@
 
     <div class="row header">
 
-        <div class="container">
+        <div class="content-container">
             <h2>{{ thread.name }}</h2>
             <div class="col-md-12">
                 <table class="table">
@@ -19,7 +19,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <time datetime="{{ thread.created_at }}">{{ thread.created_at|started_time }}</time>
+                                <time datetime="{{ thread.created_at }}">{{ thread.created_at | started_time }}</time>
                             </td>
                             <td>{{ thread.user.username }}</td>
                             <td>{% last_posted_user_name thread %}</td>

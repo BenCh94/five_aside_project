@@ -10,8 +10,8 @@ from django.conf import settings
 
 class Subject(models.Model):
 
-    name= models.CharField(max_length=255)
-    descrption=HTMLField()
+    name = models.CharField(max_length=255)
+    descrption = HTMLField()
 
     def __unicode__(self):
         return self.name

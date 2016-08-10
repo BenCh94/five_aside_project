@@ -11,8 +11,10 @@
 <div class="row player-box">
 {% for player in players %}
         <div class="col-md-3">
-            <img src="{{ MEDIA_URL }}{{ player.image }}" class="player-image">
-            <h3>{{ player.first_name }} {{ player.last_name }}</h3>
+            <a href="/player/{{ player.id }}/">
+                <img src="{{ MEDIA_URL }}{{ player.image }}" class="player-image">
+                <h3>{{ player.first_name }} {{ player.last_name }}</h3>
+            </a>
         </div>
 {% endfor %}
 </div>

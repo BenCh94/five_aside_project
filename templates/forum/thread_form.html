@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% load staticfiles %}
 
-</body>
-</html>
+{% block head_js %}
+    <script>
+        tinyMCE.init({mode: "textareas", theme: 'modern', plugins: 'paste'})
+    </script>
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="col-md-9">
+            <form method="post" action="{% url 'new_thread' subject.id %}">
+                {% csrf_token %}
+                {{ thread_form | as_bootstrap }}
+                <hr>
+                {{ post_form | as_bootstrap }}
+
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">Post New Thread</button>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}
