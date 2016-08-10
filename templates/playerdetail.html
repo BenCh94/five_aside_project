@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
     <h2>{{ player.first_name }} {{ player.last_name }}</h2>
-    <img src="{{ MEDIA_URL }}{{ player.image }}">
+    <img class="player-image" src="{{ MEDIA_URL }}{{ player.image }}">
 
 {% endblock %}
