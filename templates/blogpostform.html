@@ -1,5 +1,9 @@
 {% extends "base.html" %}
-
+{% block head_js %}
+    <script>
+        tinyMCE.init({mode: "textareas", theme: 'modern', plugins: 'paste'})
+    </script>
+{% endblock %}
 {% block content %}
 
     {% load bootstrap_tags %}

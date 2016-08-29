@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {%  block content %}
-    <form role="form" method="post" action="{% url 'create_teams' %}">
+    <form role="form" method="post" action="{% url 'create_teams' %}" >
         <h2>New Match</h2>
         {% csrf_token %}
         <h2>Select Players</h2>
@@ -17,4 +17,9 @@
             <button type="submit" class="btn btn-primary">Get Teams</button>
         </div>
     </form>
+
+    <p><button id="ajaxSubmit" class="btn btn-primary" type="button">Ajax teams</button></p>
+    <div id="ajaxContent">
+
+    </div>
 {% endblock %}

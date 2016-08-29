@@ -1,7 +1,14 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
 .player-image{
     width: 100%;
     height: 150px;
     border-radius: 10px;
+}
+.small-player-image {
+    width: 50%;
+    height:75px;
+    border-radius: 5px;
 }
 
 .player-box {
@@ -21,6 +28,26 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+/*block background colour for smaller devices*/
+@media screen and (max-width: 735px){
+    body {
+        background: #41837E;
+    }
+}
+@media screen and (max-device-width: 735px){
+    body {
+        background: #41837E;
+    }
+}
+#logo > a {
+    color: #003430;
+}
+#logo a:hover{
+    text-decoration: none;
+}
+#tag-line {
+    text-decoration: none;
+}
 .content-container {
     background: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7));
     padding: 10px;
@@ -38,6 +65,7 @@ body {
 .index-hack {
     margin-bottom: 150px;
 }
+/*profile styling*/
 .team-container {
     background: url("https://s3-eu-west-1.amazonaws.com/ben-fiveify/media/images/teams.jpg");
     background-size: cover;
@@ -53,3 +81,46 @@ body {
     text-align: center;
     margin-bottom: 200px;
 }
+.player-name {
+    color: white;
+}
+#player-link {
+    color: #003430;
+}
+/*Custom nav-bar styling*/
+.navbar > #nav > ul {
+    background-color: #003430;
+    border-bottom: solid #54A759;
+    border-width: 10px;
+    border-radius: 10px;
+    height: auto;
+    text-align: center;
+    width: 100%;
+    padding-left: 50px;
+}
+.nav > li > a{
+    font-family: Oswald;
+    font-size: 30px;
+    text-decoration: none;
+    color: #54A759;
+    transition: ease-out 0.2s;
+}
+.nav > li {
+    display: inline-block;
+    text-decoration: none;
+    transition: ease-out 0.5s;
+}
+.nav > li > a:hover {
+    background-color: #54A759;
+    color: #003430;
+    padding-right: 20px;
+    padding-left: 20px;
+    transition: ease-out 0.5s;
+}
+.current {
+    background-color: #54A759;
+    /*override specificity navbar CSS with important for active link*/
+    color: #003430 !important;
+    height: 100%;
+}
+/*end custom nav*/

@@ -1,7 +1,4 @@
-{% extends 'base.html' %}
-
-{% block content %}
-    <button type="button" class="btn btn-primary" onclick="location.href=''">
+    <button type="button" class="btn btn-primary" id="ajaxSubmit">
         <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>Redo
     </button>
     <div class="row"></div>
@@ -12,8 +9,8 @@
                 <div class="col-md-2"></div>
                     {% for player in team1 %}
                         <div class="col-md-4">
-                            <img src="{{ MEDIA_URL }}{{ player.image }}" class="small-player-image">
-                            <h3 class="player-name">{{ player.first_name }} {{ player.last_name }}</h3>
+                            <img src="{{ MEDIA_URL }}{{ player.image }}" class="player-image">
+                            <h5 class="player-name">{{ player.first_name }} {{ player.last_name }}</h5>
                         </div>
                     {% endfor %}
             </div>
@@ -26,11 +23,10 @@
                 <div class="col-md-2"></div>
                     {% for player in team2 %}
                         <div class="col-md-4">
-                            <img src="{{ MEDIA_URL }}{{ player.image }}" class="small-player-image">
-                            <h3 class="player-name">{{ player.first_name }} {{ player.last_name }}</h3>
+                            <img src="{{ MEDIA_URL }}{{ player.image }}" class="player-image">
+                            <h5 class="player-name">{{ player.first_name }} {{ player.last_name }}</h5>
                         </div>
                     {% endfor %}
             </div>
         </div>
     </div>
-{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for product in products %}
+    <div class="col-md-3">
+        <img src="{{ MEDIA_URL }}{{ product.image }}" class="player-image">
+        <h3>{{ product.name}}</h3>
+        <h4>{{ product.description }}</h4>
+        <button onclick="location.href='checkout'">Buy Now</button>
+    </div>
+{% endfor %}
+{% endblock %}

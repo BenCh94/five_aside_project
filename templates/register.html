@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
-
+{% load static from staticfiles %}
 {% load bootstrap_tags %}
-
+{% block head_js %}
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">
+    Stripe.publishableKey= '{{ publishable }}'
+    </script>
+    <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+{% endblock %}
 {% block content %}
 <div class="content-container">
     <form role="form" method="post" action="{% url 'register' %}">
+        <div id="credit-card-errors" style="display: none">
+            <div class="alert-message block-message error" id="stripe-error-message"></div>
+        </div>
         <legend>Create a new account</legend>
         {% csrf_token %}
         {{ form | as_bootstrap }}
 
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Create Account</button>
+            <button type="submit" class="btn btn-primary" id="validate_card_btn" name="commit">Create Account</button>
         </div>
 
     </form>

@@ -5,3 +5,4 @@ class NewPlayerForm(forms.ModelForm):
     class Meta:
         model = Player
         fields = ('first_name', 'last_name', 'image')
+

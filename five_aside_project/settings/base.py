@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'blog',
     'django_forms_bootstrap',
     'accounts',
@@ -36,6 +37,8 @@ INSTALLED_APPS = [
     'emoticons',
     'tinymce',
     'threads',
+    'store',
+    'stripe',
 
 ]
 
@@ -133,6 +136,11 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 AUTH_USER_MODEL = 'accounts.User'
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend', 'accounts.backends.EmailAuth',)
 
+
+SITE_ID = 1
+
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 # LOGGING = {
 #     'version': 1,
 #     'disable_existing_loggers': False,

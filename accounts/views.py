@@ -5,6 +5,13 @@ from django.contrib.auth.decorators import login_required
 from django.template.context_processors import csrf
 from .forms import UserLoginForm, UserRegistrationForm
 from home.models import Player
+from django.conf import settings
+import stripe
+import datetime
+import arrow
+
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 # Create your views here.
 def login(request):
@@ -52,6 +59,7 @@ def register(request):
     args.update(csrf(request))
 
     return render(request, 'register.html', args)
+
 
 @login_required(login_url='/login/')
 def profile(request):
