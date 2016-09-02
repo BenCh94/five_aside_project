@@ -47,7 +47,7 @@ def register(request):
 
             if user:
                 messages.success(request, 'You have successfully registered')
-                return redirect(reverse('index'))
+                return redirect(reverse('login'))
 
             else:
                 messages.error(request, 'Unable to log you in at this time ')

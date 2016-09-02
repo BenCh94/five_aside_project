@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>5ify</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href ="{% static 'css/style.css' %}">
     <link rel="stylesheet" href ="{% static 'css/font-awesome-4.6.3/css/font-awesome.min.css' %}">
     {% block head_js %}{% endblock %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div id="masthead">
@@ -23,21 +24,21 @@
         </div>
         <div class="row">
             <nav class="navbar">
-                <div id="nav">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/">Home</a></li>
-                        {% if user.is_authenticated %}
-                        <li><a href="/profile/">Profile</a></li>
-                        <li><a href="/logout/">Log out</a></li>
-                        {% else %}
-                        <li><a href="/register/">Register</a></li>
-                        <li><a href="/login/">Log in</a></li>
-                        {% endif %}
-                        <li><a href="/blog/">Blog</a></li>
-                        <li><a href="/forum/">Forum</a></li>
-                        <li><a href="/store/">Store</a></li>
-                    </ul>
-                </div>
+                    <div id="nav">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/">Home</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="/profile/">Profile</a></li>
+                            <li><a href="/logout/">Log out</a></li>
+                            {% else %}
+                            <li><a href="/register/">Register</a></li>
+                            <li><a href="/login/">Log in</a></li>
+                            {% endif %}
+                            <li><a href="/blog/">Blog</a></li>
+                            <li><a href="/forum/">Forum</a></li>
+                            <li><a href="/store/">Store</a></li>
+                        </ul>
+                    </div>
             </nav>
         </div>
     </div>
@@ -47,7 +48,7 @@
 
 {% endblock content %}
 </div>
-<div class="whitespace">
-    <p class="created">Created by Ben Chadwick</p>
-</div>
+
+<p class="created">Created by Ben Chadwick</p>
+
 </body>

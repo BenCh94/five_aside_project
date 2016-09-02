@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(//fonts.googleapis.com/css?family=Oswald);
 
 .player-image{
     width: 100%;
@@ -13,7 +13,7 @@
 
 .player-box {
     height: 450px;
-    background: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url("https://s3-eu-west-1.amazonaws.com/ben-fiveify/media/images/champos-league.jpg");
+    background: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url("//s3-eu-west-1.amazonaws.com/ben-fiveify/media/images/champos-league.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -24,7 +24,7 @@
 }
 
 body {
-    background: url("https://s3-eu-west-1.amazonaws.com/ben-fiveify/media/images/soccer_11July16_original.jpeg");
+    background: url("//s3-eu-west-1.amazonaws.com/ben-fiveify/media/images/soccer_11July16_original.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -53,21 +53,18 @@ body {
     padding: 10px;
     border-radius: 10px;
 }
-.whitespace {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 
-}
 .created {
     color: white;
+    position: fixed;
+    bottom:5px;
 }
 .index-hack {
     margin-bottom: 150px;
 }
 /*profile styling*/
 .team-container {
-    background: url("https://s3-eu-west-1.amazonaws.com/ben-fiveify/media/images/teams.jpg");
+    background: url("//s3-eu-west-1.amazonaws.com/ben-fiveify/media/images/teams.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -86,6 +83,21 @@ body {
 }
 #player-link {
     color: #003430;
+}
+.viewCounter {
+    color: #12ABB2;
+    display: inline;
+}
+.tags {
+    color: #12AB82;
+    display: inline;
+    font-style: italic;
+}
+.details {
+    display: inline;
+}
+.forum-titles {
+    margin: 10px;
 }
 /*Custom nav-bar styling*/
 .navbar > #nav > ul {

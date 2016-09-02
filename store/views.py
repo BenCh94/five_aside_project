@@ -32,7 +32,7 @@ def charge(request):
 
     stripe.Charge.create(
         customer=customer.id,
-        currency="usd",
+        currency="eur",
         amount=amount,
         description='Card Payment 5ify'
     )

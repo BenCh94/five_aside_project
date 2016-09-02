@@ -77,29 +77,4 @@ def create_teams(request):
 
     return render(request, 'teams.html', {'team1': team1, 'team2': team2})
 
-@csrf_exempt
-def gen_teams(request):
-    if request.method == "POST":
-        #empty lists to add to
-        team1 = []
-        team2 = []
-        unselected = []
-        #Filter players by those selected in checkbox
-        selected_players = request.POST.getlist('player-check')
-        playing = Player.objects.filter(user_id_id=request.user.id, id__in=selected_players)
 
-
-        # Assign playing players to team1 or team2
-        while len(team1) < 5:
-            x = randint(0, len(playing) - 1)
-            if playing[x] not in team1:
-                team1.append(playing[x])
-        for player in playing:
-            if player not in team1:
-                unselected.append(player)
-        while len(team2) < 5:
-            y = randint(0, len(unselected) - 1)
-            if unselected[y] not in team2:
-                team2.append(unselected[y])
-
-    return HttpResponse('ajaxTeams.html',{'team1': team1, 'team2': team2})
